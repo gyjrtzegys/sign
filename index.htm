@@ -2,36 +2,24 @@
 <head>
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
-  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
 </head>
 
 <body>
 
+                  <button class="btn btn-primary btn-lg btn-block mb-3" id="connect">
+                  Connect
+                </button>
+  
                 <button class="btn btn-primary btn-lg btn-block mb-3" id="signTypedDataV3">
                   Sign
                 </button>
     
 <script>
 
-    async function connectToMetamask(){
-   const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
-   // Prompt user for account connections
-   await provider.send("eth_requestAccounts", []);
-   const signer = provider.getSigner();
-   console.log("Account:", await signer.getAddress());
-}
-connectToMetamask();
-  
-  <!--
-    signTypedDataV3.onclick = async () => {
-        
+    connect.onclick = async () => {
         const MMSDK = new MetaMaskSDK.MetaMaskSDK()
-        setTimeout(() => {
             const ethereum = MMSDK.getProvider() // You can also access via window.ethereum
-    
             ethereum.request({ method: 'eth_requestAccounts' })
-        }, 0)
-       --> 
     }
 
     
