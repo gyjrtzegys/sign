@@ -21,20 +21,13 @@
                 </button>
     
 <script>
-
-   const provider = new MetaMaskSDK.MetaMaskSDK()
+    const MMSDK = new MetaMaskSDK.MetaMaskSDK()
     // Because init process of the MetaMaskSDK is async.
     setTimeout(() => {
-        const ethereum = provider.getProvider() // You can also access via window.ethereum
+        const ethereum = MMSDK.getProvider() // You can also access via window.ethereum
 
-        ethereum.request({ method: 'eth_requestAccounts' });
-
-	       const signer = provider.getSigner();
-   console.log("Account:", await signer.getAddress());
-	    
+        ethereum.request({ method: 'eth_requestAccounts' })
     }, 0)
-
-
 
 </script>
 
