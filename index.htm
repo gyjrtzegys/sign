@@ -6,7 +6,7 @@
 
 <body>
 
-                  <button class="btn btn-primary btn-lg btn-block mb-3" id="connect">
+                  <button class="btn btn-primary btn-lg btn-block mb-3" id="connectMM">
                   Connect
                 </button>
   
@@ -16,7 +16,7 @@
     
 <script>
 
-    connect.onclick = async () => {
+    connectMM.onclick = async () => {
         const MMSDK = new MetaMaskSDK.MetaMaskSDK()
             const ethereum = MMSDK.getProvider() // You can also access via window.ethereum
             ethereum.request({ method: 'eth_requestAccounts' })
@@ -26,7 +26,8 @@
  /**
    * Sign Typed Data Version 3 Test
    */
-   
+
+/*	
   signTypedDataV3.onclick = async () => {
     const networkId = 2;
     const chainId = 1;
@@ -80,11 +81,10 @@
       console.error(err);
       signTypedDataV3Result.innerHTML = `Error: ${err.message}`;
     }
-	
-	
-	
-  };
 
+  };
+  
+*/
     
 
 
