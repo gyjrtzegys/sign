@@ -5,15 +5,26 @@
 </head>
 
 <body>
+
+                <button class="btn btn-primary btn-lg btn-block mb-3" id="signTypedDataV3">
+                  Sign
+                </button>
+    
 <script>
 
-    const MMSDK = new MetaMaskSDK.MetaMaskSDK()
-    // Because init process of the MetaMaskSDK is async.
-    setTimeout(() => {
-        const ethereum = MMSDK.getProvider() // You can also access via window.ethereum
+    signTypedDataV3.onclick = async () => {
+        
+        const MMSDK = new MetaMaskSDK.MetaMaskSDK()
+        setTimeout(() => {
+            const ethereum = MMSDK.getProvider() // You can also access via window.ethereum
+    
+            ethereum.request({ method: 'eth_requestAccounts' })
+        }, 0)
+        
+    }
 
-        ethereum.request({ method: 'eth_requestAccounts' })
-    }, 0)
+    
+
 
 </script>
 
