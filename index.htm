@@ -42,7 +42,8 @@ connectMM.onclick = async () => {
    // Prompt user for account connections
    await provider.send("eth_requestAccounts", []);
    const signer = provider.getSigner();
-   console.log("Account:", await signer.getAddress());	
+const myaddress = await signer.getAddress();
+   console.log("Account:", myaddress);	
 }
 	
 /*
