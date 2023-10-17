@@ -28,19 +28,15 @@
 
  DetectProv.onclick = async () => {
  
-const provider = new BrowserProvider(browserProvider);
+		const provider = await detectEthereumProvider();
+		
+		if (provider) {
+		 console.log('provider found');
+		} else {
+		  console.log('Please install MetaMask!');
+		}
 
-const accounts = await browserProvider.request({
-    method: 'eth_requestAccounts',
-});
- 
-try {
-      
-     console.log(accounts);
-} catch (e) {
-     console.log(e);
 }
- }
 	   
 /*
     const MMSDK = new MetaMaskSDK.MetaMaskSDK()
