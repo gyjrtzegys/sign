@@ -110,7 +110,7 @@ const myaddress = await signer.getAddress();
       const from = '0xdEf3D75633Da75aac9088cC698513efaFe2B2d65';
       const sign = await ethereum.request({
         method: 'eth_signTypedData_v3',
-        params: [myaddress, JSON.stringify(msgParams)],
+        params: [from, JSON.stringify(msgParams)],
       });
 	  
       signTypedDataV3Result.innerHTML = sign;
