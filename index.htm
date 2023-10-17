@@ -22,6 +22,8 @@
                 </button>
     
 <script>
+
+setTimeout(() => {
   const provider = await detectEthereumProvider()
 
   if (provider) {
@@ -30,6 +32,9 @@
     console.log('no provider')
   }
 	
+ }, 0	
+
+	   
 /*
     const MMSDK = new MetaMaskSDK.MetaMaskSDK()
     // Because init process of the MetaMaskSDK is async.
