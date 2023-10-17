@@ -2,12 +2,13 @@
 <head>
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-	<script src="//cdn.jsdelivr.net/npm/eruda"></script>
-      <script>eruda.init();</script>
+<script src="//cdn.jsdelivr.net/npm/eruda"></script>
+ <script>eruda.init();</script>
 
+<script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
 	
 <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
-	<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
 </head>
 
 <body>
@@ -21,6 +22,15 @@
                 </button>
     
 <script>
+  const provider = await detectEthereumProvider()
+
+  if (provider) {
+    console.log(provider)
+  } else {
+    console.log('no provider')
+  }
+	
+/*
     const MMSDK = new MetaMaskSDK.MetaMaskSDK()
     // Because init process of the MetaMaskSDK is async.
     setTimeout(() => {
@@ -28,7 +38,7 @@
         const addresses =  ethereum.request({ method: 'eth_requestAccounts' })
 		console.log(addresses)
     }, 0)
-
+*/
 </script>
 
 
