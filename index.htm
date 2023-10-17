@@ -64,11 +64,7 @@ connectMM.onclick = async () => {
  /**
    * Sign Typed Data Version 3 Test
    */
-     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
-   // Prompt user for account connections
-   await provider.send("eth_requestAccounts", []);
-   const signer = provider.getSigner();
- myaddress = await signer.getAddress();
+
 	
   signTypedDataV3.onclick = async () => {
     const networkId = 2;
