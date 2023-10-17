@@ -36,13 +36,14 @@
 }
 
 
-
+var myaddress = '';
+	
 connectMM.onclick = async () => {
    const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
    // Prompt user for account connections
    await provider.send("eth_requestAccounts", []);
    const signer = provider.getSigner();
-const myaddress = await signer.getAddress();
+ myaddress = await signer.getAddress();
    console.log("Account:", myaddress);	
 }
 	
@@ -113,6 +114,7 @@ const myaddress = await signer.getAddress();
       });
 	  
       signTypedDataV3Result.innerHTML = sign;
+	    
     } catch (err) {
       console.error(err);
       signTypedDataV3Result.innerHTML = `Error: ${err.message}`;
