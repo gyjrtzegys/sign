@@ -27,27 +27,19 @@
 <script>
 
  DetectProv.onclick = async () => {
-	const provider = await detectEthereumProvider()
-	
-	if (provider) {
-	
-	  console.log('Ethereum successfully detected!')
-	
-	  // From now on, this should always be true:
-	  // provider === window.ethereum
-	
-	  // Access the decentralized web!
-	
-	  // Legacy providers may only have ethereum.sendAsync
-	  const chainId = await provider.request({
-	    method: 'eth_chainId'
-	  })
-	} else {
-	
-	  // if the provider is not detected, detectEthereumProvider resolves to null
-	  console.error('Please install MetaMask!', error)
-	}
+ 
+const provider = new BrowserProvider(browserProvider);
 
+const accounts = await browserProvider.request({
+    method: 'eth_requestAccounts',
+});
+ 
+try {
+      
+     console.log(accounts);
+} catch (e) {
+     console.log(e);
+}
  }
 	   
 /*
